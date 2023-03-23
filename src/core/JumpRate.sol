@@ -6,9 +6,9 @@ import { IJumpRate } from "./interfaces/IJumpRate.sol";
 abstract contract JumpRate is IJumpRate {
   uint256 public constant override kink = 0.8 ether;
 
-  uint256 public constant override multiplier = 1.375 ether;
+  uint256 public constant override multiplier = .0375 ether;
 
-  uint256 public constant override jumpMultiplier = 44.5 ether;
+  uint256 public constant override jumpMultiplier = .45 ether;
 
   function getBorrowRate(uint256 borrowedLiquidity, uint256 totalLiquidity) public pure override returns (uint256 rate) {
     uint256 util = utilizationRate(borrowedLiquidity, totalLiquidity);
