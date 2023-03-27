@@ -228,7 +228,7 @@ contract DepositTest is TestHelper {
   function testDepositAfterFullAccrue() external {
     _deposit(cuh, cuh, 1 ether, 8 ether, 1 ether);
     _mint(address(this), address(this), 10 ether);
-    vm.warp(730 days + 1);
+    vm.warp(73_000 days + 1);
 
     vm.expectRevert(Lendgine.CompleteUtilizationError.selector);
     lendgine.deposit(cuh, 1 ether, bytes(""));

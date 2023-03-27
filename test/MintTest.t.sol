@@ -176,7 +176,7 @@ contract MintTest is TestHelper {
 
   function testMintAfterFullAccrue() external {
     _mint(address(this), address(this), 5 ether);
-    vm.warp(730 days + 1);
+    vm.warp(73_000 days + 1);
 
     vm.expectRevert(Lendgine.CompleteUtilizationError.selector);
     lendgine.mint(cuh, 1 ether, bytes(""));

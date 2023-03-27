@@ -52,11 +52,11 @@ contract AccrueInterestTest is TestHelper {
     _deposit(cuh, cuh, 1 ether, 8 ether, 1 ether);
     _mint(cuh, cuh, 5 ether);
 
-    vm.warp(730 days + 1);
+    vm.warp(73_000 days + 1);
 
     lendgine.accrueInterest();
 
-    assertEq(730 days + 1, lendgine.lastUpdate());
+    assertEq(73_000 days + 1, lendgine.lastUpdate());
     assertEq(0, lendgine.totalLiquidityBorrowed());
     assertEq(5 ether, lendgine.rewardPerPositionStored());
   }
